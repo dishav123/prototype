@@ -1,0 +1,151 @@
+<!-- student name: Dishap Shrestha
+university id:2409012 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weatherapi</title>
+  <!-- //various linking url for css,googlefonts etc. -->
+  <link rel="stylesheet" href="dishap_shrestha_2409012.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+<!-- div for footer -->
+<div class="foot"><footer>Copyright © 2024 Dishap shrestha(2409012). All rights reserved.</footer></div>
+<!-- creating div w/ class outer to move all the items with reference to it. -->
+<div class="outer">
+  <!-- //Adding timestamp -->
+  <div class="uppercontainer"><div class="timezone"></div></div>
+  <!-- //writing the fetched description of weather in this div. -->
+  <div class="sidebox">
+  <div class="description"></div>
+  <!-- adding google fonts -->
+  <span class="material-symbols-outlined">location_on</span>
+  <!-- //div for location searched by user. -->
+  <div class="sidelocation">//</div>
+  <div class="sideboxtemperature">//</div>
+  <img src="//" class="sidetemperatureicon" alt="temperature_icon">
+  <!-- //div for searchbox and button. -->
+  <div class="searchbox">
+   <input type="text" placeholder="   Enter Location or Country" class="searchin">
+   <button class="searchbutton">Search</button>
+  </div>
+  <div class="viewdatabutton">
+   <button onclick="pastdata()" class="pastdata">View Past data</button>
+  </div>
+  <!-- //div for humidity box and items. -->
+  <div class="humiditybox">
+    <div class="humiditytext">Humidity</div>
+    <div><img src="https://raw.githubusercontent.com/dishav123/prototype/d62e21d8516e657e493b07f4d63dd5d82aeaabab/humidity.png" class="humidityicon" alt="humidityicon"></div>
+    <div class="humiditytext1">//</div>
+  </div>
+  <!-- //div for  pressure box and its items. -->
+  <div class="pressurebox">
+    <div class="pressuretext">Pressure</div>
+    <div><img src="https://raw.githubusercontent.com/dishav123/prototype/2c119ac3f3114dc32d02704ec9d1e38ad3edd427/pressure.png" class="pressureicon"></div>
+    <div class="pressuretext1">//</div>
+    <div class="pressuretext2">hPa</div>
+  </div>
+  <!-- //div for  windspeed box and its items. -->
+  <div class="windspeedbox">
+    <div class="windtext">Wind Speed</div>
+    <div ><img src="https://raw.githubusercontent.com/dishav123/prototype/4de0d33373e30de920a926c237b51a8861256dfb/anemometer.png" class="windicon"></div>
+    <div class="windtext1">//</div>
+    <div class="windtextone">km/hr</div>
+  </div>
+
+  <!-- //div for box1 for week data's(aside overlaped boxes) -->
+  <div class="b1"class="btemp">
+    <div ><img src="https://raw.githubusercontent.com/dishav123/prototype/b38a434b381ac1a6e3708039039f3a0b3eed87f7/cloudy%20(1).png" class="b1icon"></div>
+    <div id="bday1"></div>
+    <div id="btemp1"></div>
+    <div class="b1humidity">Humidity:</div>
+    <div id="bhumiditydata1"></div>
+    <div class="b1pressure">Pressure:</div>
+    <div id="bpressuredata1"></div>
+    <div class="b1windspeed">Windspeed:</div>
+    <div id="bwindspeeddata1"></div>
+  </div>
+  <!-- //div for box2 for week data's(aside overlaped boxes) -->
+  <div class="b2" class="btemp">
+    <div><img src="https://raw.githubusercontent.com/dishav123/prototype/1029223fcacdc8e2f87c8c6e777f170632cef44e/rain.png" class="b2icon"></div>
+    <div id="bday2"></div>
+    <div id="btemp2"></div>
+    <div class="b2humidity">Humidity:</div>
+    <div id="bhumiditydata2"></div>
+    <div class="b2pressure">Pressure:</div>
+    <div id="bpressuredata2"></div>
+    <div class="b2windspeed">Windspeed:</div>
+    <div id="bwindspeeddata2"></div>
+  </div>
+  <!-- //div for box3 for week data's(aside overlaped boxes) -->
+  <div class="b3"class="btemp">
+    <div><img src="https://raw.githubusercontent.com/dishav123/prototype/7e12e03e312c5653d86bb72d459077189cd68208/sun.png" class="b2icon"></div>
+    <div id="bday3"></div>
+    <div id="btemp3"></div>
+    <div class="b3humidity">Humidity:</div>
+    <div id="bhumiditydata3"></div>
+    <div class="b3pressure">Pressure:</div>
+    <div id="bpressuredata3"> </div>
+    <div class="b3windspeed">Windspeed:</div>
+    <div id="bwindspeeddata3"></div>
+  </div>
+  <!-- //div for box4 for week data's(aside overlaped boxes) -->
+  <div class="b4"class="btemp">
+    <div><img src="https://raw.githubusercontent.com/dishav123/prototype/1abead2965533997ea46975d8c6c5ec99dfe9516/windy.png" class="b4icon"></div>
+    <div id="bday4"></div>
+    <div id="btemp4"></div>
+    <div class="b4humidity">Humidity:</div>
+    <div id="bhumiditydata4"></div>
+    <div class="b4pressure">Pressure:</div>
+    <div id="bpressuredata4"></div>
+    <div class="b4windspeed">Windspeed:</div>
+    <div id="bwindspeeddata4"></div>
+  </div>
+  <!-- //div for box5 for week data's(aside overlaped boxes) -->
+  <div class="b5">
+    <div><img src="https://raw.githubusercontent.com/dishav123/prototype/1b54aa5d9278a1e246d9597ab395bc4d3ff25594/mist.png" class="b5icon"></div>
+    <div id="bday5"></div>
+    <div id="btemp5"></div>
+    <div class="b5humidity">Humidity:</div>
+    <div id="bhumiditydata5"></div>
+    <div class="b5pressure">Pressure:</div>
+    <div id="bpressuredata5"></div>
+    <div class="b5windspeed">Windspeed:</div>
+    <div id="bwindspeeddata5"></div>
+  </div>
+  <!-- //div for box6 for week data's(aside overlaped boxes) -->
+  <div class="b6">
+    <div><img src="https://raw.githubusercontent.com/dishav123/prototype/740f4fe70d9636b4c0d0571957888d4d06db5602/snow.png" class="b6icon"></div>
+    <div id="bday6"></div>
+    <div id="btemp6"></div>
+    <div class="b6humidity">Humidity:</div>
+    <div id="bhumiditydata6"></div>
+    <div class="b6pressure">Pressure:</div>
+    <div id="bpressuredata6"> </div>
+    <div class="b6windspeed">Windspeed:</div>
+    <div id="bwindspeeddata6"></div>
+  </div>
+  <!-- //div for box7 for week data's(aside overlaped boxes) -->
+  <div class="b7">
+      <div><img src="https://raw.githubusercontent.com/dishav123/prototype/4829b6e53fe77fef757b3a66a0feb9213ff85d7d/storm.png" class="b7icon"></div>
+      <div id="bday7"></div>
+      <div id="btemp7"></div>
+      <div class="b7humidity">Humidity:</div>
+      <div id="bhumiditydata7"></div>
+      <div class="b7pressure">Pressure:</div>
+      <div id="bpressuredata7"> </div>
+      <div class="b7windspeed">Windspeed:</div>
+      <div id="bwindspeeddata7"></div>
+</div>
+<!-- //linking with javascript file. -->
+<script src="Dishap_Shrestha_2409012.js"></script>
+</body>
+</html>
